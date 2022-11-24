@@ -1,0 +1,37 @@
+{
+  "name": "dir-generate",
+  "version": "1.0.0",
+  "filesConfig": {
+    "0": [],
+    "vue": [
+      {
+        "filename": "components",
+        "type": "dir",
+        "children": []
+      },
+      {
+        "filename": "index",
+        "template": "vue",
+        "type": ".vue"
+      }
+    ],
+    "axios": [
+      {
+        "filename": "request",
+        "type": ".js",
+        "template": "axios"
+      },
+      {
+        "filename": "index",
+        "type": ".js",
+        "template": "axiosIndex"
+      }
+    ],
+    "index": [
+      {
+        "filename": "index",
+        "type": ".js"
+      }
+    ]
+  }
+}

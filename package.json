@@ -1,0 +1,21 @@
+{
+  "name": "dir-generate",
+  "version": "1.0.0",
+  "description": "",
+  "bin": "./bin/index.js",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "rm -rf file && node ./bin/index.js -f file"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "victory",
+  "license": "ISC",
+  "dependencies": {
+    "boxen": "^7.0.0",
+    "chalk": "^4.1.2",
+    "yargs": "^17.6.2"
+  }
+}
