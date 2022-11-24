@@ -2,7 +2,7 @@
   "name": "dir-generate",
   "version": "1.0.0",
   "filesConfig": {
-    "0": [],
+    "default": [],
     "vue": [
       {
         "filename": "components",

@@ -5,23 +5,24 @@ const { hideBin } = require('yargs/helpers');
 const makefiles = require('../lib/makefiles.js');
 const log = require('../lib/log.js');
 const config = require('../config.json');
-const editor = require('../lib/editConfig');
-// // DIRNAME
-// const dir = process.cwd();
+const helpers = require('../lib/help');
 
-// const argv = yargs(hideBin(process.argv)).argv;
+// DIRNAME
+const dir = process.cwd();
 
-// // node bin/index.js -f filename
-// const filename = argv.f;
+const argv = yargs(hideBin(process.argv)).argv;
 
-// if (filename && typeof filename !== 'boolean') {
-//   const configFiles = config.filesConfig[argv._[0]]
-//     ? config.filesConfig[argv._[0]]
-//     : config.filesConfig['0'];
-//   makefiles.mkFiles(dir, filename, configFiles);
-//   log.logSuccess(`文件${filename}创建完成`);
-// } else {
-//   log.logError('参数输入错误');
-// }
+// node bin/index.js -f filename
+const filename = argv.f;
 
-// editor.editor();
+if (!argv.temp && filename && typeof filename !== 'boolean') {
+  const configFiles = config.filesConfig[argv._[0]] ? config.filesConfig[argv._[0]] : config.filesConfig['default'];
+  makefiles.mkFiles(dir, filename, configFiles);
+  log.logSuccess(`文件${filename}创建完成`);
+} else {
+  if (argv.temp) {
+    helpers.logTemplate(config.filesConfig);
+  } else {
+    log.logError('参数输入错误');
+  }
+}
